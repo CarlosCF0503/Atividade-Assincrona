@@ -13,7 +13,11 @@ docker-compose down -v
 
 # Credenciais Padrão
 Host: localhost
+
 Porta: 5432
+
 Usuário: admin
+
 Senha: adminpassword
+
 Database: vector_db
