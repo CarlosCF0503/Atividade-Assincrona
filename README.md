@@ -1,17 +1,17 @@
-#Banco de Dados Vetorizado para IA (PostgreSQL + pgvector)
-#📋 Descrição
+# Banco de Dados Vetorizado para IA (PostgreSQL + pgvector)
+# 📋 Descrição
 Este repositório contém a infraestrutura "Plug & Play" para um banco de dados PostgreSQL com suporte a embeddings e busca semântica usando a extensão pgvector.
 É o ponto de partida para projetos que utilizam RAG (Retrieval-Augmented Generation) com Inteligência Artificial.
 
-#🚀 Como Usar
+# 🚀 Como Usar
 Pré-requisitos
 Docker instalado na sua máquina
 
 Docker Compose instalado
 
 #Subir o Banco de Dados
-Bash
-# Clone este repositório
+````Bash
+Clone este repositório
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 
@@ -24,8 +24,8 @@ sleep 5
 # Verifique se a extensão pgvector foi criada
 docker exec ia-vector-db psql -U admin -d vector_db -c "\dx"
 Você deve ver a extensão vector listada.
-
-Conectar ao Banco de Dados
+````
+# Conectar ao Banco de Dados
 ````Bash
 # Acesse o banco via psql
 docker exec -it ia-vector-db psql -U admin -d vector_db
