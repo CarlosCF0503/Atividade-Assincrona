@@ -2,20 +2,19 @@ version: '3.8'
 
 services:
   ia-vector-db:
-    image: pgvector/pgvector:pg16
+    image: pgvector/pgvector:pg16  # Imagem com pgvector pré-compilado
     container_name: ia-vector-db
-    restart: always
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_PASSWORD: adminpassword  # MUDE ISSO EM PRODUÇÃO!
       POSTGRES_DB: vector_db
     ports:
-      - "5432:5432"
+      - "5432:5432"  # Mapeia porta interna 5432 para externa 5432
     volumes:
-      # Persistência de dados
-      - pg_data:/var/lib/postgresql/data
-      # Execução automática na inicialização
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pg_data:/var/lib/postgresql/data  # Persistência de dados
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Script de inicialização
+    restart: unless-stopped
 
 volumes:
   pg_data:
+    driver: local
