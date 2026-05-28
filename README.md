@@ -9,8 +9,8 @@ Docker instalado na sua máquina
 
 Docker Compose instalado
 
-#Subir o Banco de Dados
-````Bash
+## Subir o Banco de Dados
+````
 Clone este repositório
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
@@ -26,9 +26,8 @@ docker exec ia-vector-db psql -U admin -d vector_db -c "\dx"
 ````
 Você deve ver a extensão vector listada.
 
-# Conectar ao Banco de Dados
+# Conectar ao Banco de Dados 
 ````
-````Bash
 # Acesse o banco via psql
 docker exec -it ia-vector-db psql -U admin -d vector_db
 
