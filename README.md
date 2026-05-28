@@ -25,8 +25,9 @@ sleep 5
 docker exec ia-vector-db psql -U admin -d vector_db -c "\dx"
 ````
 Você deve ver a extensão vector listada.
-````
+
 # Conectar ao Banco de Dados
+````
 ````Bash
 # Acesse o banco via psql
 docker exec -it ia-vector-db psql -U admin -d vector_db
