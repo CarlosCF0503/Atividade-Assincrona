@@ -67,14 +67,14 @@ Criação de tabela exemplo documents com coluna de embeddings
 
 Criação de índice para buscas otimizadas
 
-📚 Próximos Passos
+# 📚 Próximos Passos
 Integrar com sua aplicação: Use a biblioteca psycopg2 (Python) ou pg (Node.js) para conectar.
 
 Gerar embeddings: Use APIs como OpenAI, Hugging Face ou modelos locais.
 
 Implementar RAG: Armazene embeddings e implemente buscas semânticas.
 
-🐛 Troubleshooting
+# 🐛 Troubleshooting
 "Erro: porta 5432 já está em uso"
 Você já tem um PostgreSQL rodando. Opções:
 
@@ -94,14 +94,14 @@ docker-compose up -d    # Sobe novamente
 "Erro: container sobe mas banco recusa conexão"
 Aguarde 5 segundos. O PostgreSQL demora um pouco para inicializar.
 ````
-📖 Referências
+# 📖 Referências
 pgvector GitHub
 
 PostgreSQL Documentation
 
 12-Factor App
 
-✅ Checklist
+# ✅ Checklist
 [x] Docker e Docker Compose instalados
 
 [x] Repositório clonado
@@ -112,7 +112,7 @@ PostgreSQL Documentation
 
 [x] Banco de dados acessível em localhost:5432
 
-Criado para: Aula 16 — Arquitetura de Software (Ciclo 03)
+# Criado para: Aula 16 — Arquitetura de Software (Ciclo 03)
 
 Disciplina: Arquitetura de Software
 
