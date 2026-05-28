@@ -23,6 +23,7 @@ sleep 5
 
 # Verifique se a extensão pgvector foi criada
 docker exec ia-vector-db psql -U admin -d vector_db -c "\dx"
+````
 Você deve ver a extensão vector listada.
 ````
 # Conectar ao Banco de Dados
@@ -32,11 +33,14 @@ docker exec -it ia-vector-db psql -U admin -d vector_db
 
 # Dentro do psql, teste uma query
 SELECT * FROM documents;
-Derrubar o Banco de Dados
+````
+# Derrubar o Banco de Dados
+````
 Bash
 # Parar e remover containers
 docker-compose down
 ````
+
 # Se quiser remover também os volumes (CUIDADO: deleta os dados!)
 docker-compose down -v
 🔧 Configuração
