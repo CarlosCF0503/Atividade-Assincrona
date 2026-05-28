@@ -1,9 +1,19 @@
--- Ativa a extensão pgvector no banco de dados
+-- Criar a extensão pgvector
 CREATE EXTENSION IF NOT EXISTS vector;
 
--- Tabela de exemplo com a coluna de vetor (1536 dimensões, padrão OpenAI)
-CREATE TABLE IF NOT EXISTS documentos_embeddings (
+-- Criar tabela exemplo para armazenar embeddings
+CREATE TABLE IF NOT EXISTS documents (
     id SERIAL PRIMARY KEY,
-    texto_original TEXT NOT NULL,
-    embedding vector(1536)
+    title VARCHAR(255),
+    content TEXT,
+    embedding vector(1536),  -- Dimensão padrão de embeddings OpenAI
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Criar índice para buscas mais rápidas (opcional, mas recomendado)
+CREATE INDEX IF NOT EXISTS idx_documents_embedding ON documents USING ivfflat (embedding vector_cosine_ops)
+    WITH (lists = 100);
+
+-- Mensagem de sucesso
+\echo 'Banco de dados inicializado com sucesso!'
+\echo 'Extensão pgvector está ativa.'
